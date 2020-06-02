@@ -6,7 +6,7 @@ module.exports = {
   execute(message, args) {
     const msgid = args.shift();
     message.delete().catch(_ => { });
-    if (message.member.roles.has(roleList.get("esh")) || message.member.roles.has(roleList.get("sm")) || message.member.roles.has(roleList.get("cm")) || message.member.roles.has(roleList.get("vcc"))) {     
+    if (message.member.roles.cache.has(roleList.get("esh")) || message.member.roles.has(roleList.get("sm")) || message.member.roles.has(roleList.get("cm")) || message.member.roles.has(roleList.get("vcc"))) {     
       function shuffle(arr) { // randomly rearanges the items in an array
   const result = [];
   for (let i = arr.length-1; i >= 0; i--) {

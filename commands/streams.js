@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-const embed = new Discord.RichEmbed()
+const embed = new Discord.MessageEmbed()
 	.setColor('#0099ff')
 	.setTitle('VR League Live!')
 	.setDescription('Join us on:\n\n[Facebook](https://www.facebook.com/WatchVRLeague/)\n[YouTube](https://www.youtube.com/channel/UC85OKmyt3WFiCQhlI0MJEyw)\n[Twitch](https://www.twitch.tv/vrchallenger)')

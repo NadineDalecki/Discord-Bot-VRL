@@ -1,20 +1,17 @@
 const Discord = require('discord.js');
 const roleList = require('../info/roles.js')
 module.exports = {
-  name: 'post',
+  name: 'post', //Use as !post RoleName
   execute(message, args) {
     message.delete().catch(_ => { });
-    const role = message.guild.roles.find(r => r.name == args.join(" "));
-    if (message.member.roles.has(roleList.get("sm"))) { 
-   //   role.setMentionable(true).then(async role => {
+    const role = message.guild.roles.cache.find(r => r.name == args.join(" "));
+    if (message.member.roles.cache.has(roleList.get("gsh"))) { 
         message.channel.send(`<@&${role.id}>`)
-        message.channel.send(ecc1);
-       // await role.setMentionable(false)
-    //  }).catch(console.error);
+        message.channel.send(sj5);
     }
   }
 }
-const sj5 = new Discord.RichEmbed()
+const sj5 = new Discord.MessageEmbed()
 .setColor('#FF0005')  
 .setTitle('Space Junkies 3v3 Crossplay Clash on August 3rd!')
 .setDescription('Come in and join the Crossplay Clash for crazy 3v3 Team Deathmatches, no matter if you have VR or not!\nEveryone is welcome! Even flatscreen players! 😉\nIf you dont have a partner ask on the Space Junkies Discord in <#548096604679176227>!\n\nPrizes: \n#1: 20.000 Ingame Coins\n#2: 10.000 Ingame Coins\n#3:  5.000 Ingame Coins\n+++1st-3rd place will get a spot in the Hall of Fame\n\nTo participate join the [Space Junkies Discord](https://discordapp.com/invite/spacejunkies) and check out <#548095322958856202>\n\u200B\n')
@@ -23,7 +20,7 @@ const sj5 = new Discord.RichEmbed()
 .setImage('https://cdn.discordapp.com/attachments/600595859192676372/605408154842431539/CrossplayClash.PNG?width=871&height=490')
 .setTimestamp()
 .setFooter('This tournament is not organized by ESL/VRL!');
-const ea = new Discord.RichEmbed()
+const ea = new Discord.MessageEmbed()
 .setColor('#00B0BE')  
 .setTitle('VRL Echo Arena')
 .setDescription('Weekly cups on Sundays: [Times & Sign Up @ ESL Play](https://play.eslgaming.com/echoarena/global)\n\n[Oculus Store](https://www.oculus.com/experiences/rift/1369078409873402/)\n[More info on vr.eslgaming.com](https://vr.eslgaming.com/echoarena/)')
@@ -34,7 +31,7 @@ const ea = new Discord.RichEmbed()
 .setImage('https://cdn.discordapp.com/attachments/600595859192676372/605408154842431539/CrossplayClash.PNG?width=871&height=490')
 .setTimestamp()
 .setFooter('This tournament is organized by ESL/VRL');
-const ec = new Discord.RichEmbed()
+const ec = new Discord.MessageEmbed()
 .setColor('#FE1A74')  
 .setTitle('VRL Echo Arena')
 .setDescription('Weekly cups on Sundays: [Times & Sign Up @ ESL Play](https://play.eslgaming.com/echoarena/global)\n\n[Oculus Store](https://www.oculus.com/experiences/rift/1369078409873402/)\n[More info on vr.eslgaming.com](https://vr.eslgaming.com/echoarena/)')
@@ -45,7 +42,7 @@ const ec = new Discord.RichEmbed()
 .setImage('https://cdn.discordapp.com/attachments/600595859192676372/605408154842431539/CrossplayClash.PNG?width=871&height=490')
 .setTimestamp()
 .setFooter('This tournament is organized by ESL/VRL');
-const ecc1 = new Discord.RichEmbed()
+const ecc1 = new Discord.MessageEmbed()
 .setColor('#DD1A61')
 .setTitle('Echo Combat Community Cup on August 10th!')
 .setDescription('We will be testing out a custom rule and new format, more info on the cup page!\nEveryone is welcome!😉\n\nTo participate join the [Echo Games Discord](https://discord.gg/DGeBQVx) and check out <#549301881583697930>\n\u200B\n')
@@ -53,7 +50,7 @@ const ecc1 = new Discord.RichEmbed()
 .addField('Need help?', 'Contact <@509143274087251978> for support\n\u200B\n')
 .setTimestamp()
 .setFooter('This tournament is not organized by ESL/VRL!');
-const ow = new Discord.RichEmbed()
+const ow = new Discord.MessageEmbed()
 .setColor('#777676')  
 .setTitle('VRL Echo Arena')
 .setDescription('Weekly cups on Sundays: [Times & Sign Up @ ESL Play](https://play.eslgaming.com/echoarena/global)\n\n[Oculus Store](https://www.oculus.com/experiences/rift/1369078409873402/)\n[More info on vr.eslgaming.com](https://vr.eslgaming.com/echoarena/)')

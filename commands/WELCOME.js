@@ -1,7 +1,7 @@
 const { RichEmbed } = require('discord.js');
 const Discord = require('discord.js');
 const roleList = require('../info/roles.js');
-const welcome = new Discord.RichEmbed()
+const welcome = new Discord.MessageEmbed()
 .setColor('#ff0000')
 .setAuthor('Welcome to the Discord server of VR League!')
 .setURL('https://play.eslgaming.com/global/vrleague')
