@@ -47,7 +47,7 @@ process.on("unhandledRejection", err => {
   ╚═══════════════════════════════════════╝*/
 
 client.on("message", async message => {
-  /*╔═══════════════════════════════════════╗
+/*╔═══════════════════════════════════════╗
     Mentions
   ╚═══════════════════════════════════════╝*/
   const news = ["nada", "na_da"];
@@ -58,10 +58,8 @@ client.on("message", async message => {
   ) {
     functions.mention(client, message, "338649491894829057");
   } else if (!message.author.bot) {
-    /*╔═══════════════════════════════════════╗
-     Commands
-  ╚═══════════════════════════════════════╝*/
-    /*╔═══════════════════════════════════════╗
+   
+/*╔═══════════════════════════════════════╗
      Dialogflow
   ╚═══════════════════════════════════════╝*/
     if (
@@ -73,7 +71,7 @@ client.on("message", async message => {
       message.reply(answer.response);
       functions.inform(client, message, answer);
     } else if (!message.content.startsWith(prefix) || message.author.bot)
-      /*╔══════════════════════════════════════╗
+/*╔══════════════════════════════════════╗
     Commands
   ╚═══════════════════════════════════════╝*/
       return;
