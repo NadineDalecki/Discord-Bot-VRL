@@ -36,7 +36,7 @@ module.exports = {
       client.users.cache
         .get("338649491894829057")
         .send(
-          `**${message.author.username} | DM:** ${message}\n**Mel:** ${answer.response}`
+          `**${message.author.username} | DM:** ${message}\n**Bot:** ${answer.response}`
         );
     } }else {
       client.users.cache
@@ -50,7 +50,7 @@ module.exports = {
     client.users.cache
       .get(id)
       .send(
-        `**${message.author.username} | ${message.channel.name}:** ${message}\n**Bot:** ${message.content}\n${message.url}`
+        `**${message.author.username}** | ${message.channel.name}: ${message.content}\n${message.url}`
       );
   }
 };

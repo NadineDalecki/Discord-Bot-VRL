@@ -5,12 +5,11 @@ const http = require("http");
 const express = require("express");
 const app = express();
 app.get("/", (request, response) => {
-  console.log(Date.now() + " Ping Received");
   response.sendStatus(200);
 });
 app.listen(process.env.PORT);
 /*╔═══════════════════════════════════════╗
-    Bot
+    Const
   ╚═══════════════════════════════════════╝*/
 const Discord = require("discord.js"),
   client = new Discord.Client({ partials: ["MESSAGE", "CHANNEL", "REACTION"] }),
@@ -30,18 +29,30 @@ client.once("ready", () => {
   }),
     console.log("Ready!");
 });
+
 /*╔═══════════════════════════════════════╗
-    ERROR
+    Errors
   ╚═══════════════════════════════════════╝*/
-client.on("error", err => {
-  client.users.cache.get("338649491894829057").send(err);
-});
-process.on("uncaughtException", err => {
-  client.users.cache.get("338649491894829057").send(err);
-});
-process.on("unhandledRejection", err => {
-  client.users.cache.get("338649491894829057").send(err);
-});
+process.on("error", error =>
+  client.users.cache
+    .get("338649491894829057")
+    .send("This is an error event:" + error.stack)
+);
+client.on("error", error =>
+  client.users.cache
+    .get("338649491894829057")
+    .send("This is an error event:" + error.stack)
+);
+process.on("uncaughtException", error =>
+  client.users.cache
+    .get("338649491894829057")
+    .send("This is an error event:" + error.stack)
+);
+process.on("unhandledRejection", error =>
+  client.users.cache
+    .get("338649491894829057")
+    .send("This is an error event:" + error.stack)
+);
 /*╔═══════════════════════════════════════╗
     Message
   ╚═══════════════════════════════════════╝*/
@@ -58,7 +69,7 @@ client.on("message", async message => {
   ) {
     functions.mention(client, message, "338649491894829057");
   } else if (!message.author.bot) {
-   
+  
 /*╔═══════════════════════════════════════╗
      Dialogflow
   ╚═══════════════════════════════════════╝*/
@@ -71,7 +82,7 @@ client.on("message", async message => {
       message.reply(answer.response);
       functions.inform(client, message, answer);
     } else if (!message.content.startsWith(prefix) || message.author.bot)
-/*╔══════════════════════════════════════╗
+      /*╔══════════════════════════════════════╗
     Commands
   ╚═══════════════════════════════════════╝*/
       return;
@@ -166,6 +177,7 @@ client.on("guildBanAdd", function(guild, user, member) {
       `${member.user.username} was banned\nMember count: ${member.guild.memberCount}`
     );
 });
+
 /*╔═══════════════════════════════════════╗
     Deleted Messages
   ╚═══════════════════════════════════════╝*/
@@ -194,12 +206,7 @@ client.on("messageDelete", async message => {
       }
     }
   };
-  try {
-    client.channels.cache.get("593500776920252416").send(delmsg);
-  } catch (error) {
-    client.channels.cache
-      .get("593500776920252416")
-      .send("Deleted Messages send: " + error);
-  }
+
+  client.channels.cache.get("718176504437276682").send(delmsg);
 });
 client.login(process.env.BOT);
