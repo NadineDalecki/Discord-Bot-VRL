@@ -1,7 +1,7 @@
 const { RichEmbed } = require('discord.js');
 const Discord = require('discord.js');
 const roleList = require('../info/roles.js');
-const welcome = new Discord.RichEmbed()
+const welcome = new Discord.MessageEmbed()
 .setColor('#ff0000')
 .setAuthor('Welcome to the Discord server of VR League!')
 .setURL('https://play.eslgaming.com/global/vrleague')
@@ -20,7 +20,7 @@ module.exports = {
   name: 'welcome',
   execute(message, client) {
     message.delete().catch(_ => { });
-    if (message.member.roles.has(roleList.get("esh"))) {
+    if (message.member.roles.cache.has(roleList.get("sm"))) {
       try
       {
         message.channel.send(welcome).then(async msg => {
@@ -34,7 +34,7 @@ module.exports = {
           
         });                                 }
       catch (error){  
-        client.channels.get("546661343374213121").send("roles:" + error)
+        client.channels.cache.get("546661343374213121").send("roles:" + error)
       }      
     }
   }
