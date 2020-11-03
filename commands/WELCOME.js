@@ -20,7 +20,7 @@ module.exports = {
   name: 'welcome',
   execute(message, client) {
     message.delete().catch(_ => { });
-    if (message.member.roles.has(roleList.get("esh"))) {
+    if (message.member.roles.cache.has(roleList.get("sm"))) {
       try
       {
         message.channel.send(welcome).then(async msg => {
@@ -34,7 +34,7 @@ module.exports = {
           
         });                                 }
       catch (error){  
-        client.channels.get("546661343374213121").send("roles:" + error)
+        client.channels.cache.get("546661343374213121").send("roles:" + error)
       }      
     }
   }
